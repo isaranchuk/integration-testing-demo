@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  wiremock:
+    ports:
+      - "8181:8080"
+
+  redis:
+    ports:
+      - "6379:6379"

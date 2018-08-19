@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  activities-service-integration:
+    image: activities-service-integration:latest
+    depends_on:
+      - activities-service
+      - wiremock
+      - redis
+    environment:
+      WIREMOCK_HOST: wiremock
+      WIREMOCK_PORT: 8080
+
+  activities-service:
+    image: activities-service:latest
+    restart: on-failure
+    depends_on:
+      - wiremock
+      - redis
+    environment:
+      ACTIVITY_BASE_URL: http://wiremock:8080
+
+  wiremock:
+    image: rodolpheche/wiremock
+
+  redis:
+    image: redis:alpine
