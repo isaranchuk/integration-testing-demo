@@ -1,7 +1,7 @@
 Feature: Get any activity for user
 
   Scenario: User is bored and he wants to get any activity
-    Given I'm `isaranchuk` and I'm bored
+    Given I am isaranchuk and I am bored
     When I request any activity
     Then the request was successful
     And the response has the attributes:

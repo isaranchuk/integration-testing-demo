@@ -19,6 +19,8 @@ services:
       - wiremock
       - redis
     environment:
+      REDIS_HOST: http://redis
+      REDIS_PORT: 6379
       ACTIVITY_BASE_URL: http://wiremock:8080
 
   wiremock:
