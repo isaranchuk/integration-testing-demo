@@ -19,13 +19,18 @@ public class ActivityService {
 
     private final UserActivityRepository userActivityRepository;
 
+    private final String baseUrl;
+
     public ActivityService(@Value("${activity.base-url}") String baseUrl, RestTemplateBuilder restTemplateBuilder, UserActivityRepository userActivityRepository) {
         this.userActivityRepository = userActivityRepository;
         this.restTemplate = restTemplateBuilder.rootUri(baseUrl).build();
+        this.baseUrl = baseUrl;
     }
 
     public UserActivity findAnyForUser(String username) {
-        Activity activity = restTemplate.getForObject(GET_ANY_ACTIVITY, Activity.class);
+        System.out.println(baseUrl);
+
+        Activity activity = restTemplate.getForObject(baseUrl + GET_ANY_ACTIVITY, Activity.class);
 
         UserActivity userActivity = UserActivity.of(activity).withUsername(username);
         userActivityRepository.save(userActivity);

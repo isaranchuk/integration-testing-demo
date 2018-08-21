@@ -9,3 +9,7 @@ services:
   redis:
     ports:
       - "6379:6379"
+
+  activities-service:
+    ports:
+      - "8282:8080"
