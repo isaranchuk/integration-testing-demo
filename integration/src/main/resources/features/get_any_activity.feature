@@ -3,7 +3,7 @@ Feature: Get any activity for user
   Scenario: User is bored and he wants to get any activity
     Given I'm `isaranchuk` and I'm bored
     When I request any activity
-    Then the request was successful
+    Then the request was successful and activity was saved
     And the response has the attributes:
       | attribute | type   | value              |
       | activity  | string | Take a bubble bath |

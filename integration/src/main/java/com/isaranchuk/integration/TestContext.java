@@ -1,6 +1,7 @@
 package com.isaranchuk.integration;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
+import io.restassured.RestAssured;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Properties;
