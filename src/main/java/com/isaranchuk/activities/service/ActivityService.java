@@ -28,8 +28,6 @@ public class ActivityService {
     }
 
     public UserActivity findAnyForUser(String username) {
-        System.out.println(baseUrl);
-
         Activity activity = restTemplate.getForObject(baseUrl + GET_ANY_ACTIVITY, Activity.class);
 
         UserActivity userActivity = UserActivity.of(activity).withUsername(username);

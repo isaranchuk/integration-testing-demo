@@ -54,8 +54,9 @@ public class GetAnyActivityStepdefs implements En {
             Response restResponse = given()
                     .pathParam("username", username.get())
                     .when()
-                    .get(activitiesServiceBaseUrl + "/v1/users/{username}/activities/any");
-
+                    .baseUri(activitiesServiceBaseUrl)
+                    .get("/v1/users/{username}/activities/any")
+                    .prettyPeek();
             response.set(restResponse);
         });
 
