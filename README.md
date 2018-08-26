@@ -7,6 +7,8 @@ Project represents activities service that exposes two REST APIs:
 * `/v1/users/{username}/activities/any` to get any activity for you're bored
 * `/v1/users/{username}/activities/history` to list all your previous activities
 
+![Container diagram](container_diagram.png)
+
 ## Technologies 
 The following technologies are used:  
 * Docker and docker-compose
@@ -19,7 +21,7 @@ There're two ways of running tests:
 * with script
 * with IDE
 
-But first you need to build custom Docker images: `activities-service` and `activities-service`
+But first you need to build custom Docker images: `activities-service` and `activities-service-integration`
 ```bash
 $ ./bin/build-image.sh
 ```
