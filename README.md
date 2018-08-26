@@ -9,6 +9,10 @@ Project represents activities service that exposes two REST APIs:
 
 ![Container diagram](container_diagram.png)
 
+# Testing
+This repository contains a standalone testing project `integration` that tests `activities-service` as a black box by testing its API.  
+Tests are independent of `activities-service` source code. 
+
 ## Technologies 
 The following technologies are used:  
 * Docker and docker-compose
